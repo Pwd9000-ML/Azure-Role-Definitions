@@ -29,10 +29,11 @@ jobs:
       shell: powershell
       run: |
        $changedFiles = "${{ env.CHANGED_FILES }}"
+       $changedFiles = $changeFiles.Split(' ')
        $buildSourcesDirectory = $env:GITHUB_WORKSPACE
        $resultArray = @()
        Foreach ($file in $changedFiles) {
-         if ($file -like "*roleDefinitions/*") {
+         if ($file -like "roleDefinitions/*") {
            $filePath = "$buildSourcesDirectory\$file"
            $resultArray += $filePath
          }
