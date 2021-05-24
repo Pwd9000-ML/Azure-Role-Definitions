@@ -29,7 +29,9 @@ jobs:
       shell: powershell
       run: |
        $changedFiles = ${{ env.CHANGED_FILES }}
+       $buildSourcesDirectory = $ {{ env.GITHUB_WORKSPACE }}
        Write-Output $changedFiles
+       Write-Output $buildSourcesDirectory
 
        $resultArray = @()
        Foreach ($file in $changedFiles) {
