@@ -12,6 +12,12 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
+    
+    - name: Get changed files in .\roleDefinitions
+      shell: powershell
+      run: echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }})" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
 
     #- name: Log into Azure using github secret AZURE_CREDENTIALS
     #  uses: Azure/login@v1
@@ -22,11 +28,11 @@ jobs:
     - name: 'Get changed role definitions'
       shell: powershell
       run: |
-       git diff --name-only
-       $editedFiles = git diff --name-only
+       $changedFiles = ${{ env.CHANGED_FILES }}
+       Write-Output $changedFiles
 
        $resultArray = @()
-       Foreach ($file in $editedFiles) {
+       Foreach ($file in $changedFiles) {
            if ($file -like "roleDefinitions/*") {
            $filePath = "$ {{ env.GITHUB_WORKSPACE }}\$file"
            $resultArray += $filePath
