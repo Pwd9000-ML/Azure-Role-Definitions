@@ -30,13 +30,10 @@ jobs:
       run: |
        $changedFiles = ${{ env.CHANGED_FILES }}
        $buildSourcesDirectory = $env:GITHUB_WORKSPACE
-       Write-Output $changedFiles
-       Write-Output $buildSourcesDirectory
-
        $resultArray = @()
        Foreach ($file in $changedFiles) {
            if ($file -like "roleDefinitions/*") {
-           $filePath = "${{ env.GITHUB_WORKSPACE }}\$file"
+           $filePath = "$buildSourcesDirectory\$file"
            $resultArray += $filePath
            }
        }
