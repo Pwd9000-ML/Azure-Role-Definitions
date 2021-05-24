@@ -22,6 +22,7 @@ jobs:
     - name: 'Get changed role definitions'
       shell: powershell
       run: |
+       git diff --name-only
        $editedFiles = git diff --name-only
 
        $resultArray = @()
