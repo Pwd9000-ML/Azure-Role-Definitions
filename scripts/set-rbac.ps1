@@ -28,13 +28,12 @@ Foreach ($file in $RoleDefinitions) {
         #Test if roledef exists
         $roleDef = Get-AzRoleDefinition $Obj.Name
         If ($roleDef) {
-            Write-Output "Role Definition [$($roleDef.name)] already exists:"
+            Write-Output "Role Definition [$($Obj.name)] already exists:"
             Write-Output "----------------------------------------------"
             $roleDef
             Write-Output "----------------------------------------------"
             Write-Output "Updating Azure Role definition"
 
-            $Obj.Id.Add("$($roleDef.Id)")
             Set-AzRoleDefinition -Role $Obj
         }
         Else {
@@ -51,13 +50,12 @@ Foreach ($file in $RoleDefinitions) {
         #Test if roledef exists
         $roleDef = Get-AzRoleDefinition $Obj.Name
         If ($roleDef) {
-            Write-Output "Role Definition [$($roleDef.name)] already exists:"
+            Write-Output "Role Definition [$($Obj.name)] already exists:"
             Write-Output "----------------------------------------------"
             $roleDef
             Write-Output "----------------------------------------------"
             Write-Output "Updating Azure Role definition"
 
-            $Obj.Id.Add("$($roleDef.Id)")
             Set-AzRoleDefinition -Role $Obj
         }
         Else {
