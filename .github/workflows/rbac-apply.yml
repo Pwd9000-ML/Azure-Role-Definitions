@@ -28,7 +28,7 @@ jobs:
     - name: 'Get changed role definitions'
       shell: powershell
       run: |
-       $changedFiles = ${{ env.CHANGED_FILES }}
+       $changedFiles = "${{ env.CHANGED_FILES }}"
        $changedFiles
        $buildSourcesDirectory = $env:GITHUB_WORKSPACE
        $buildSourcesDirectory
