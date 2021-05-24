@@ -35,7 +35,7 @@ jobs:
 
        $resultArray = @()
        Foreach ($file in $changedFiles) {
-         if ($file -like "roleDefinitions/*") {
+         if ($file -like "*roleDefinitions/*") {
            Write-output $file
            $filePath = "$buildSourcesDirectory\$file"
            $resultArray += $filePath
