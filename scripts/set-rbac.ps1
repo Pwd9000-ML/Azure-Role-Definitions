@@ -34,7 +34,7 @@ Foreach ($file in $RoleDefinitions) {
             Write-Output "----------------------------------------------"
             Write-Output "Updating Azure Role definition"
 
-            $obj.Id.Add($roleDef.Id)
+            $Obj = Add-Member -NotePropertyName Id -NotePropertyValue $roledef.Id
             Set-AzRoleDefinition -Role $Obj
         }
         Else {
@@ -57,7 +57,7 @@ Foreach ($file in $RoleDefinitions) {
             Write-Output "----------------------------------------------"
             Write-Output "Updating Azure Role definition"
             
-            $obj.Id.Add($roleDef.Id)
+            $Obj = Add-Member -NotePropertyName Id -NotePropertyValue $roledef.Id
             Set-AzRoleDefinition -Role $Obj
         }
         Else {
