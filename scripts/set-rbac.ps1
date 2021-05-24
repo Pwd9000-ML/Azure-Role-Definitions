@@ -1,5 +1,5 @@
 # 'scrips/set_rbac.ps1'
-#Parameters from pipeline
+#Parameters from github actions
 Param (
  [Parameter(Mandatory)]
  [array]$RoleDefinitions
