@@ -1,6 +1,6 @@
 # Azure-Role-Definitions
 
-[![RBAC-Apply](https://github.com/Pwd9000-ML/Azure-Role-Definitions/actions/workflows/rbac-apply.yml/badge.svg)](https://github.com/Pwd9000-ML/Azure-Role-Definitions/actions/workflows/rbac-apply.yml)
+[![RBAC-Apply](https://github.com/Pwd9000-ML/Azure-Role-Definitions/actions/workflows/rbac-apply.yml/badge.svg)](https://github.com/Pwd9000-ML/Azure-Role-Definitions/actions/workflows/rbac-apply.yml) [![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
 
 Repository to maintain and manage Azure Custom Role Definitions.  
 This repository hosts a github workflow and Azure custom role definition JSON files, to maintain and manage Azure RBAC.  
