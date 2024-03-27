@@ -52,7 +52,7 @@ jobs:
        Write-Output $psStringResult
 
     - name: Create - Update role definitions
-      uses: azure/powershell@v1
+      uses: azure/powershell@v2
       with:
         inlineScript: | 
           .\scripts\set-rbac.ps1 -RoleDefinitions ${{ env.ROLE_DEFINITIONS }}
